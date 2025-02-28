@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华晨宇日出演唱会</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+      .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #333;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: left;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>华晨宇日出演唱会</h1>
+        <p>以下为描写华晨宇日出演唱会的五言律诗：</p>
+        <pre>
+《观华晨宇日出演唱会》
+晨辉漫舞台，
+花影韵中来。
+天籁惊林鸟，
+仙姿绝俗埃。
+和声融晓雾，
+劲舞踏云垓。
+日出歌无尽，
+心潮久未开。
+</pre>
+    </div>
+</body>
+
+</html>
