@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华晨宇日出演唱会</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFE4E1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #FF69B4;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+   .video-container {
+      border: 5px solid #FF1493;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 640px;
+      height: 360px;
+      border: none;
+    }
+
+    p {
+      color: #8B0000;
+      font-size: 1.2em;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    button {
+      background-color: #FF1493;
+      color: white;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #FF69B4;
+    }
+
+   .heart {
+      color: #FF0000;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>欢迎来到华晨宇日出演唱会世界 <span class="heart">💖</span></h1>
+  <div class="video-container">
+    <iframe src="https://www.douyin.com/video/7364904134467669288" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <p>在这里，一起感受华晨宇日出演唱会带来的震撼与感动！每一刻都是珍贵的回忆 <span class="heart">💖</span></p>
+  <button onclick="alert('感谢你对华晨宇的喜爱！')">表达喜爱</button>
+  <script>
+    // 这里可以添加更多交互逻辑，比如动画效果触发等
+    // 例如，当页面加载完成时，可以触发一个可爱的动画效果
+    window.onload = function () {
+      const elements = document.querySelectorAll('h1, p, button');
+      elements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = 1;
+          element.style.transform = 'translateY(0)';
+        }, index * 300);
+      });
+    };
+  </script>
+</body>
+
+</html>
