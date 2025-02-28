@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于华晨宇音乐的小调查</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFF0F5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #FF1493;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      color: #8B0000;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #FF1493;
+      color: white;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #FF69B4;
+    }
+
+  .thumb-up {
+      font-size: 5em;
+      color: #FF1493;
+      display: none;
+    }
+
+  .no-taste {
+      font-size: 10em;
+      color: #FF0000;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>你喜欢华晨宇的音乐吗？</h1>
+  <form id="surveyForm">
+    <label>
+      <input type="radio" name="answer" value="like">喜欢
+    </label>
+    <label>
+      <input type="radio" name="answer" value="dislike">不喜欢
+    </label>
+    <button type="button" onclick="showResult()">提交</button>
+  </form>
+  <div class="thumb-up">👍</div>
+  <div class="no-taste">没品</div>
+
+  <script>
+    function showResult() {
+      const form = document.getElementById('surveyForm');
+      const selectedAnswer = form.elements['answer'].value;
+      const thumbUp = document.querySelector('.thumb-up');
+      const noTaste = document.querySelector('.no-taste');
+
+      thumbUp.style.display = 'none';
+      noTaste.style.display = 'none';
+
+      if (selectedAnswer === 'like') {
+        thumbUp.style.display = 'block';
+      } else if (selectedAnswer === 'dislike') {
+        noTaste.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+
+</html>
