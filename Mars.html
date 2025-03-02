@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火星演唱会战报</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://p3-bot-sign.byteimg.com/tos-cn-i-v4nquku3lp/e875fc2fdb634c2b8e0f073574790713.jpg~tplv-v4nquku3lp-image.image?rk3s=68e6b6b5&x-expires=1743488075&x-signature=5VUsGrhTmydwUuVDcbhUSs8iElU%3D');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #FF1493;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        a {
+            background-color: rgba(255, 20, 149, 0.8);
+            color: white;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #FF69B4;
+        }
+
+        video {
+            display: none;
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>欢迎来到华晨宇世界</h1>
+    <ul>
+        <li><a href="#" onclick="showVideo()">视频</a></li>
+        <li><a href="#" onclick="showImage(1)">缪斯设计奖</a></li>
+        <li><a href="#" onclick="showImage(2)">美国好设计奖</a></li>
+        <li><a href="#" onclick="showImage(3)">法国设计奖</a></li>
+        <li><a href="#" onclick="showImage(4)">德国if设计奖</a></li>
+    </ul>
+    <video id="concertVideo" src="https://www.bilibili.com/video/BV1AD421K7Ha/?spm_id_from=333.337.search-card.all.click">
+    </video>
+    <img id="image1"
+        src="https://p6-bot-sign.byteimg.com/tos-cn-i-v4nquku3lp/2e7505c639f04a58b9539f7e069ca01b.jpg~tplv-v4nquku3lp-image.image?rk3s=68e6b6b5&x-expires=1743491417&x-signature=XglrJWu0qz0ST80pF%2BjSR3edQ%2Bw%3D">
+    <img id="image2"
+        src="https://p6-bot-sign.byteimg.com/tos-cn-i-v4nquku3lp/7f8f6c8047c44abfb8da12ec09edaa0f.jpg~tplv-v4nquku3lp-image.image?rk3s=68e6b6b5&x-expires=1743491417&x-signature=yNjO27IymjQLDKQxTZfRB%2FKkL4c%3D">
+    <img id="image3"
+        src="https://p6-bot-sign.byteimg.com/tos-cn-i-v4nquku3lp/151e555cd
