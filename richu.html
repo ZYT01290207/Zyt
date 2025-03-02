@@ -50,7 +50,7 @@
             background-color: #FF69B4;
         }
 
-        video {
+        iframe {
             display: none;
         }
 
@@ -65,8 +65,8 @@
     <ul>
         <li><a href="#" onclick="showVideo()">视频</a></li>
     </ul>
-    <video id="concertVideo" src="https://www.bilibili.com/video/BV1AD421K7Ha/?spm_id_from=333.337.search-card.all.click">
-    </video>
+    <!-- 使用 iframe 嵌入 B 站视频 -->
+    <iframe id="concertVideo" src="//player.bilibili.com/player.html?bvid=BV1AD421K7Ha&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
     <audio id="bgMusic" src="http://163cn.tv/Cpj4ngS">
     </audio>
     <script>
@@ -75,7 +75,11 @@
             const audio = document.getElementById('bgMusic');
             video.style.display = 'block';
             audio.style.display = 'block';
-            audio.play();
+
+            // 尝试播放音频
+            audio.play().catch(error => {
+                console.error('音频播放失败:', error);
+            });
         }
     </script>
 </body>
