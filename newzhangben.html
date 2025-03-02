@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可爱记账本</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F8FF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #1E90FF;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            border: 2px solid #1E90FF;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #1E90FF;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00BFFF;
+        }
+
+      .entry {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #F9F9F9;
+            width: 350px;
+        }
+
+      .total-section {
+            margin-top: 20px;
+            color: #1E90FF;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>开启记账之旅啦🥰</h1>
+    <form id="entryForm">
+        <label for="date">日期:</label>
+        <input type="text" id="date" placeholder="YYYY-MM-DD">
+        <label for="amount">金额:</label>
+        <input type="number" id="amount" required>
+        <label for="type">类型:</label>
+        <input type="radio" id="income" name="type" value="income"> 收入
+        <input type="radio" id="expense" name="type" value="expense"> 支出
+        <label for="description">描述:</label>
+        <input type="text" id="description" placeholder="简要描述">
+        <button type="button" onclick="addEntry()">添加记录</button>
+    </form>
+    <div id="entries"></div>
+    <div class="total-section" id="totalSection"></div>
+
+    <script>
+        function addEntry() {
+            const date = document.getElementById('date').value;
+            const amount = document.getElementById('amount').value;
+            const type = document.querySelector('input[name="type"]:checked').value;
+            const description = document.getElementById('description').value;
+
+            const entryDiv = document.createElement('div');
+            entryDiv.classList.add('entry');
+            entryDiv.innerHTML = `
+                <p>日期: ${date}</p>
+                <p>金额: ${amount} ${type === 'income'? '收入' : '支出'}</p>
+                <p>描述: ${description}</p>
+            `;
+
+            const entriesContainer = document.getElementById('entries');
+            entriesContainer.appendChild(entryDiv);
+
+            // 计算总收入和总支出
+            const entries = document
