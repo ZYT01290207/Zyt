@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日出演唱会</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://p9-bot-sign.byteimg.com/tos-cn-i-v4nquku3lp/522d38edf73b41e9acbd67873ad0b39b.jpg~tplv-v4nquku3lp-image.image?rk3s=68e6b6b5&x-expires=1743492245&x-signature=j2kmWyvwCf9rCJ8MDAyKsm%2BMzOM%3D');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #FF1493;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        a {
+            background-color: rgba(255, 20, 149, 0.8);
+            color: white;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #FF69B4;
+        }
+
+        video {
+            display: none;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>欢迎来到日出演唱会</h1>
+    <ul>
+        <li><a href="#" onclick="showVideo()">视频</a></li>
+    </ul>
+    <video id="concertVideo" src="https://www.bilibili.com/video/BV1AD421K7Ha/?spm_id_from=333.337.search-card.all.click">
+    </video>
+    <audio id="bgMusic" src="http://163cn.tv/Cpj4ngS">
+    </audio>
+    <script>
+        function showVideo() {
+            const video = document.getElementById('concertVideo');
+            const audio = document.getElementById('bgMusic');
+            video.style.display = 'block';
+            audio.style.display = 'block';
+            audio.play();
+        }
+    </script>
+</body>
+
+</html>
