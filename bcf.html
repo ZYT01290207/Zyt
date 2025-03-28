@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不重逢 - 华晨宇</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #1a1a1a, #2c2c2c);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .player-container {
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .cd-container {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 20px;
+        }
+
+        .cd {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+
+        .cd.playing {
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cd-cover {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: url('cd-cover.jpg') center/cover no-repeat;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 5px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cd::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .song-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .song-title {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .artist {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: #ff6b6b;
+            border-radius: 5px;
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .control-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .play-pause {
+            width: 50px;
+            height: 50px;
+            background: #ff6b6b;
+            font-size: 24px;
+        }
+
+        .control-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="song-info">
+            <h1 class="song-title">不重逢</h1>
+            <p class="artist">华晨宇</p>
+        </div>
+
+        <div class="cd-container">
+            <div class="cd">
+                <div class="cd-cover"></div>
+            </div>
+        </div>
+
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="time">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button class="control-button">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button class="control-button play-pause" onclick="togglePlay()">
+                <i class="fas fa-play" id="play-icon"></i>
+            </button>
+            <button class="control-button">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+
+    <audio id="audio" src="no-reunion.mp3"></audio>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const cd = document.querySelector('.cd');
+        const playIcon = document.getElementById('play-icon');
+        const progress = document.getElementById('progress');
+        const progressContainer = document.getElementById('progress-container');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        let isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                pauseMusic();
+            } else {
+                playMusic();
+            }
+        }
+
+        function playMusic() {
+            cd.classList.add('playing');
+            playIcon.className = 'fas fa-pause';
+            audio.play();
+            isPlaying = true;
+        }
+
+        function pauseMusic() {
+            cd.classList.remove('playing');
+            playIcon.className = 'fas fa-play';
+            audio.pause();
+            isPlaying = false;
+        }
+
+        function updateProgress(e) {
+            const { duration, currentTime } = e.srcElement;
+            const progressPercent = (currentTime / duration) * 100;
+            progress.style.width = progressPercent + '%';
+
+            const durationMinutes = Math.floor(duration / 60);
+            const durationSeconds = Math.floor(duration % 60);
+            const currentMinutes = Math.floor(currentTime / 60);
+            const currentSeconds = Math.floor(currentTime % 60);
+
+            durationEl.textContent = `${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+            currentTimeEl.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
+        }
+
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        }
+
+        // 事件监听
+        audio.addEventListener('timeupdate', updateProgress);
+        audio.addEventListener('ended', () => {
+            cd.classList.remove('playing');
+            playIcon.className = 'fas fa-play';
+            isPlaying = false;
+        });
+        progressContainer.addEventListener('click', setProgress);
+
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                togglePlay();
+            }
+        });
+    </script>
+</body>
+</html>
