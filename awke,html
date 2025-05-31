@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>埃文凯尔视频及弹幕数据分析</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+        }
+        .section {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>埃文凯尔视频及弹幕数据分析</h1>
+        <img src="头图" alt="头图">
+    </div>
+    <div class="section">
+        <h2>弹幕情感倾向</h2>
+        <img src="情感分析饼状图" alt="情感分析饼状图">
+        <p>相关弹幕情感以积极为主，负面情绪极少，观众态度普遍友好且支持。</p>
+    </div>
+    <div class="section">
+        <h2>高频词柱状图</h2>
+        <img src="高频词图片" alt="高频词图片">
+        <p>前 20 高频词中，“埃文凯尔”“中国”“相册”“美国”“张家界” 占据前位；地域词汇 “中国”“美国”“天津” “南京”“张家界”进入前二十，地域主题较显著。</p>
+    </div>
+    <div class="section">
+        <h2>词云图</h2>
+        <img src="词云图的图片" alt="词云图">
+        <p>核心人物与事件：“埃文凯尔” 字体最大，为核心焦点，“中国行” 突出其在中国的活动，“中国”“美国” 表明涉及中外关联。 
+ 历史记忆：“南京大屠杀”“侵华” 等词，强调对历史事件的铭记，可能涉及对历史真相的探讨与反思。 
+ 文化交流：“国礼”“铜雕”“瓷瓶”“博物馆” 等词，体现与中国文化、艺术相关的互动，如参观博物馆、接触国礼级工艺品，彰显文化层面的交流。 
+ 情感与互动：“邀请”“朋友”“感动”“落泪” 等词，传递出友好、热情的氛围，反映出埃文凯尔与中国网友或公众间的积极情感互动，可能是其经历或行为引发了情感共鸣。 
+ 特质与行为：“硬核” 一词，可能用于形容埃文凯尔的行事风格或所参与活动的特点，暗示其具有强烈冲击力或独特性。</p>
+    </div>
+</body>
+</html>
