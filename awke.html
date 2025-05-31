@@ -5,27 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>埃文凯尔视频及弹幕数据分析</title>
     <style>
+        /* 全局样式 */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #e6f7ff; /* 淡蓝色背景 */
+            color: #333;
         }
+
+        /* 头部样式 */
         .header {
             text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
+            background-color: #007bff; /* 更深的蓝色 */
+            color: white;
+            padding: 40px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
         .header img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+        /* 章节样式 */
         .section {
-            padding: 20px;
-            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 1000px;
         }
+
+        .section h2 {
+            color: #007bff;
+            border-bottom: 2px solid #e6f7ff;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
         .section img {
-            max-width: 100%;
+            max-width: 60%;
             height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section p {
+            line-height: 1.6;
+            color: #666;
         }
     </style>
 </head>
@@ -41,7 +82,7 @@
     </div>
     <div class="section">
         <h2>高频词柱状图</h2>
-        <img src="高频词图片.png" alt="高频词图片">
+        <img src="高频词.png" alt="高频词图片">
         <p>前 20 高频词中，“埃文凯尔”“中国”“相册”“美国”“张家界” 占据前位；地域词汇 “中国”“美国”“天津” “南京”“张家界”进入前二十，地域主题较显著。</p>
     </div>
     <div class="section">
